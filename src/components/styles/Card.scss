@@ -1,0 +1,60 @@
+.card {
+  width: 90px;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  margin: 5px;
+  font-size: 40px;
+
+  &:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+  }
+
+  &.matched {
+    background-color: blue;
+    transition: transform 0.5s, background-color 3s ease-in-out 0.5s;
+    div {
+      box-shadow: none;
+      transition: box-shadow 2s ease-in-out 0.5s;
+    }
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.flip {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+  }
+
+  .card-back {
+    transform: rotateY(0deg);
+  }
+
+  .card-front {
+    transform: rotateY(180deg);
+  }
+}

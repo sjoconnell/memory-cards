@@ -1,0 +1,9 @@
+.game {
+  max-width: 670px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: blue;
+  justify-content: space-around;
+  padding: 20px;
+  perspective: 1000px;
+}
