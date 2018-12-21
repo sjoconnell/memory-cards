@@ -16,6 +16,11 @@
     transition: transform 0.2s;
   }
 
+  &.matched,
+  &.flip {
+    transform: rotateY(180deg);
+  }
+
   &.matched {
     background-color: blue;
     transition: transform 0.5s, background-color 3s ease-in-out 0.5s;
@@ -32,10 +37,6 @@
     cursor: pointer;
   }
 
-  &.flip {
-    transform: rotateY(180deg);
-  }
-
   .card-front,
   .card-back {
     position: absolute;
@@ -50,11 +51,11 @@
     box-shadow: 5px 5px 5px black;
   }
 
-  .card-back {
-    transform: rotateY(0deg);
-  }
-
   .card-front {
     transform: rotateY(180deg);
+  }
+
+  .card-back {
+    transform: rotateY(0deg);
   }
 }

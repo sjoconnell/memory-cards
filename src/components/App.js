@@ -11,9 +11,6 @@ class App extends Component {
     cards: createCards()
   };
 
-  /**
-   *
-   */
   areCardsAMatch = id => {
     const firstCardFlipped = this.state.cards.find(
       card => card.id === this.state.flippedCardIds[0]
@@ -29,27 +26,28 @@ class App extends Component {
     });
   };
 
-  /**
-   *
-   */
   handleCardClick = id => {
     this.setState({
       freezeGame: true
     });
+    // If no cards are flipped, flip the card
     if (this.state.flippedCardIds.length === 0) {
       this.setState({
         flippedCardIds: [...this.state.flippedCardIds, id],
         freezeGame: false
       });
     } else {
+      // check if the clicked card is the same as the currently flipped card
       if (this.state.flippedCardIds.includes(id)) {
         this.setState({
           freezeGame: false
         });
       } else {
+        // flip the card as it is not the same as the currently flipped card
         this.setState({
           flippedCardIds: [...this.state.flippedCardIds, id]
         });
+        // Check if both flipped cards are match
         if (this.areCardsAMatch(id)) {
           this.setState({
             freezeGame: false,
@@ -61,6 +59,7 @@ class App extends Component {
             flippedCardIds: []
           });
         } else {
+          // reset both flipped cards since they are not a match
           setTimeout(this.resetUnmatchedCards, 1750);
         }
       }

@@ -4,9 +4,7 @@ import "./styles/Card.scss";
 const Card = ({ value, id, flipped, matched, disabled, handleCardClick }) => {
   return (
     <div
-      className={`card ${flipped || matched ? "flip" : ""} ${
-        matched ? "matched" : ""
-      }`}
+      className={`card ${flipped ? "flip" : ""} ${matched ? "matched" : ""}`}
       onClick={() =>
         disabled || matched || flipped ? null : handleCardClick(id)
       }

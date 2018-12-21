@@ -1,6 +1,3 @@
-/**
- * creates an array of cards for memory game
- */
 export default function createCards() {
   const cardValues = [
     "😃",
