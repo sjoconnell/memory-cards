@@ -24,14 +24,14 @@ export default function createCards() {
     []
   );
 
-  return shuffe(cards);
+  return shuffle(cards);
 }
 
 /**
  * Randomly shuffles an array
  * https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
  */
-function shuffe(cards) {
+function shuffle(cards) {
   const newCards = [...cards];
   for (let i = newCards.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

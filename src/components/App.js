@@ -38,6 +38,7 @@ class App extends Component {
       });
     } else {
       // check if the clicked card is the same as the currently flipped card
+      // This should not happen as we disable the click of flipped card but here just in case
       if (this.state.flippedCardIds.includes(id)) {
         this.setState({
           freezeGame: false
@@ -74,7 +75,6 @@ class App extends Component {
             value={card.value}
             id={card.id}
             key={card.id}
-            color={"red"}
             flipped={this.state.flippedCardIds.includes(card.id)}
             matched={this.state.matchedCardIds.includes(card.id)}
             disabled={this.state.freezeGame}

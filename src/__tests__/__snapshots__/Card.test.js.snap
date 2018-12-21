@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card snapshot 1`] = `
+<div
+  className="card  "
+  onClick={[Function]}
+>
+  <div
+    className="card-front"
+  >
+    <span
+      aria-label="front-card-icon"
+      role="img"
+    />
+  </div>
+  <div
+    className="card-back"
+  >
+    <span
+      aria-label="back-card-icon"
+      role="img"
+    >
+      ❓
+    </span>
+  </div>
+</div>
+`;
